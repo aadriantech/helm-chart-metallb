@@ -364,10 +364,7 @@ frrk8s:
 
 # Custom Configuration from User
 # Network Configuration
-configInline:
-  address-pools:
-  - name: default
-    protocol: layer2
-    addresses:
-    - 192.168.1.240-192.168.1.250
-
+ipAddressPool:
+  name: first-pool
+  namespace: metallb-system
+  addressRange: 192.168.1.240-192.168.1.250
