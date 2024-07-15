@@ -362,9 +362,18 @@ frrk8s:
   # mode.
   enabled: false
 
+
+# --------------------------------
 # Custom Configuration from User
-# Network Configuration
+# --------------------------------
+# ipAddressPool Network Configuration
 ipAddressPool:
-  name: first-pool
+  name: capstone-pool
   namespace: metallb-system
-  addressRange: 172.19.0.240-172.19.0.250
+  addressRange: 172.19.0.240-172.19.0.250 # depends on the subnet of the kind cluster
+
+# Layer 2 Advertisement Network Configuration
+l2Advertisement:
+  name: capstone-pool
+  namespace: metallb-system
+  ipAddressPool: capstone-pool # should be same as the ipAddressPool Name
