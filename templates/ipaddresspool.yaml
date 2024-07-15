@@ -1,8 +1,12 @@
-apiVersion: metallb.io/v1beta1
-kind: IPAddressPool
+apiVersion: v1
+kind: ConfigMap
 metadata:
-  name: {{ .Values.ipAddressPool.name }}
   namespace: {{ .Values.ipAddressPool.namespace }}
-spec:
-  addresses:
-  - {{ .Values.ipAddressPool.addressRange }}
+  name: {{ .Values.ipAddressPool.name }}
+data:
+  config: |
+    address-pools:
+    - name: default
+      protocol: layer2
+      addresses:
+      - {{ .Values.ipAddressPool.addressRange }}
