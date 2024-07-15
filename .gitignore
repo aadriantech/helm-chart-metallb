@@ -1,9 +1,6 @@
 # Helm package files
 *.tgz
 
-# Helm configuration files
-values.yaml
-
 # Ignore Kubernetes configuration files
 kubeconfig
 
