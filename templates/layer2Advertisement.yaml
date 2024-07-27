@@ -1,8 +1,9 @@
 apiVersion: metallb.io/v1beta1
-kind: IPAddressPool
+kind: L2Advertisement
 metadata:
-  name: {{ template "metallb.fullname" . }}-ip-address-pool
+  name: {{ template "metallb.fullname" . }}-layer2-advertisement
   namespace: {{ .Release.Namespace | quote }}
 spec:
-  addresses:
+  ipAddressPools:
     - {{ .Values.ipAddressPool.addressRange }}
+  

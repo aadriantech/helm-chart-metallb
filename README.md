@@ -6,6 +6,18 @@ A network load-balancer implementation for Kubernetes using standard routing pro
 
 **Homepage:** <https://metallb.universe.tf>
 
+## Installation
+via helm command (good for development testing)
+```bash
+helm install metallb ./path/to/local/metallb-chart --namespace metallb-system --create-namespace -f ./values.yaml
+```
+
+## User Notes - Custom Definitions
+Added three new files for this setup
+- configmap-ipAddressPool.yaml
+- ipAddressPool.yaml
+- layer2Advertisement.yaml
+
 ## Source Code
 
 * <https://github.com/metallb/metallb>

@@ -3,8 +3,8 @@
 # Declare variables to be passed into your templates.
 
 imagePullSecrets: []
-nameOverride: ""
-fullnameOverride: ""
+nameOverride: "metallb"
+fullnameOverride: "metallb"
 loadBalancerClass: ""
 
 # To configure MetalLB, you must specify ONE of the following two
@@ -367,13 +367,9 @@ frrk8s:
 # Custom Configuration from User
 # --------------------------------
 # ipAddressPool Network Configuration
-ipAddressPool:
-  name: capstone-pool
-  namespace: metallb-system
+ipAddressPool:    
   addressRange: 172.19.0.240-172.19.0.250 # depends on the subnet of the kind cluster
 
 # Layer 2 Advertisement Network Configuration
-l2Advertisement:
-  name: capstone-pool
-  namespace: metallb-system
-  ipAddressPool: capstone-pool # should be same as the ipAddressPool Name
+#l2Advertisement:  
+#  ipAddressPool: capstone-pool # should be same as the ipAddressPool Name
