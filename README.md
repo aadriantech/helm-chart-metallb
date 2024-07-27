@@ -7,16 +7,24 @@ A network load-balancer implementation for Kubernetes using standard routing pro
 **Homepage:** <https://metallb.universe.tf>
 
 ## Installation
+
 via helm command (good for development testing)
 ```bash
 helm install metallb ./path/to/local/metallb-chart --namespace metallb-system --create-namespace -f ./values.yaml
-```
 
+eg:
+
+helm upgrade metallb . --namespace metallb-system --create-namespace -f ./values.yaml
+```
 ## User Notes - Custom Definitions
 Added three new files for this setup
 - configmap-ipAddressPool.yaml
 - ipAddressPool.yaml
 - layer2Advertisement.yaml
+
+## Installation Notion Page
+
+* <https://www.notion.so/adrian-adriano-tech/Metallb-Metal-load-balancer-95658a6f4c7a47ce920ad26fa85512a7> Private Repo
 
 ## Source Code
 
